@@ -5,10 +5,11 @@ See documentation on Gladys Doc
 
 Basics :
 
-Uploder le tout sur wamp64.
+Uploder le tout sur wamp64 dans www/GladysDashboard/ .
+Cree un VirtualHost sous le non gladysdashboard.beta .
 Rentre le ficher gladysdashboard.sql dans la base de donner sous phpmyadmin.
 
-ensuite aller dans le ficher Inc.SSH et modifer par vos information
+Ensuite aller dans le ficher Inc.SSH et modifer par vos information
 
 _Resources/Libs/Inc.SSH.php.
 
