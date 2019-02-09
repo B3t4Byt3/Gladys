@@ -4,7 +4,7 @@ A dummy module for the Gladys-Project
 See documentation on Gladys Doc
 
 Basics :
-Il faut enlever le (0) du .htaccess.
+
 Uploder le tout sur wamp64.
 Rentre le ficher gladysdashboard.sql dans la base de donner sous phpmyadmin.
 
