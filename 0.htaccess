@@ -1,0 +1,94 @@
+###############################
+######## Start Serveur ########
+###############################
+
+php_value display_errors 1
+RewriteEngine on
+RewriteBase /
+
+#######################################
+######## ErrorDocument 200-505 ########
+#######################################
+
+#ErrorDocument 200 /_Resources/Error/Error_Document/Error_200
+#ErrorDocument 201 /_Resources/Error/Error_Document/Error_201
+#ErrorDocument 203 /_Resources/Error/Error_Document/Error_203
+#ErrorDocument 301 /_Resources/Error/Error_Document/Error_301
+#ErrorDocument 302 /_Resources/Error/Error_Document/Error_302
+#ErrorDocument 305 /_Resources/Error/Error_Document/Error_305
+#ErrorDocument 400 /_Resources/Error/Error_Document/Error_400
+#ErrorDocument 401 /_Resources/Error/Error_Document/Error_401
+#ErrorDocument 402 /_Resources/Error/Error_Document/Error_402
+#ErrorDocument 403 /_Resources/Error/Error_Document/Error_403
+#ErrorDocument 404 /_Resources/Error/Error_Document/Error_404
+#ErrorDocument 405 /_Resources/Error/Error_Document/Error_405
+#ErrorDocument 500 /_Resources/Error/Error_Document/Error_500
+#ErrorDocument 501 /_Resources/Error/Error_Document/Error_501
+#ErrorDocument 502 /_Resources/Error/Error_Document/Error_502
+#ErrorDocument 503 /_Resources/Error/Error_Document/Error_503
+#ErrorDocument 504 /_Resources/Error/Error_Document/Error_504
+#ErrorDocument 505 /_Resources/Error/Error_Document/Error_505
+
+
+#################################
+######## Fix Lien Direct ########
+#################################
+
+#RewriteCond %{HTTP_REFERER} !^$
+#RewriteCond %{HTTP_REFERER} !^https://(www.)?gladysdashboard.beta(/)?.*$ [NC]
+#RewriteRule .*.(gif|png|jpg|jpeg|pdf|doc|wav|bmp|avi|mpg|mpeg|mp3|zip|rar|css|js)$ http://www.google.com/ [R,NC] 
+
+
+###############################################
+######## Force la disparition des WWWW ########
+###############################################
+
+#RewriteCond %{HTTP_HOST} !^gladysdashboard.beta$ [NC]
+#RewriteRule ^(.*)$ http://gladysdashboard.beta/$1 [L,R=301]
+
+
+###################################
+######## PHP vers sans PHP ########
+###################################
+
+#RewriteCond %{REQUEST_FILENAME}.php -f
+#RewriteRule ^(.*)$ $1.php [L]
+
+
+#################################
+######## Rewrite Dossier ########
+#################################
+
+<ifModule mod_rewrite.c>
+
+##############################
+######## Rewrite Libs ########
+##############################
+
+RewriteRule ^Debugger$ /_Resources/Libs/Debugger [L]
+RewriteRule ^Coming_Soon$ /_Resources/Libs/Coming_Soon [L]
+RewriteRule ^Log_Out$ /_Resources/Libs/Log_Out [L]
+RewriteRule ^Activation$ /_Resources/Libs/Activation [L]
+RewriteRule ^Buy_Paypal$ /_Resources/Libs/Buy_Paypal [L]
+RewriteRule ^Show_Error$ /_Resources/Libs/Show_Error [L]
+RewriteRule ^Show_Success$ /_Resources/Libs/Show_Success [L]
+RewriteRule ^Ipn$ /_Resources/Libs/Ipn [L]
+
+###############################
+######## Rewrite Error ########
+###############################
+
+RewriteRule ^Error_Database_Error$ /_Resources/Error/Error_Database_Error [L]
+RewriteRule ^Error_IP_Banned$ /_Resources/Error/Error_IP_Banned [L]
+RewriteRule ^Error_Login$ /_Resources/Error/Error_Login [L]
+RewriteRule ^Error_Privilege$ /_Resources/Error/Error_Privilege [L]
+RewriteRule ^Error_Banned$ /_Resources/Error/Error_Banned [L]
+RewriteRule ^Error_Compte_Inatif$ /_Resources/Error/Error_Compte_Inatif [L]
+RewriteRule ^Error_Activate_Account$ /_Resources/Error/Error_Activate_Account [L]
+RewriteRule ^Error_Fields$ /_Resources/Error/Error_Fields [L]
+RewriteRule ^Error_Try_Again$ /_Resources/Error/Error_Try_Again [L]
+RewriteRule ^Error_Username$ /_Resources/Error/Error_Username [L]
+RewriteRule ^Error_Hack$ /_Resources/Error/Error_Hack [L]
+
+
+</ifModule>
