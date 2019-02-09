@@ -6,7 +6,7 @@ See documentation on Gladys Doc
 Basics :
 Il faut enlever le (0) du .htaccess.
 Uploder le tout sur wamp64.
-Rentre la base de donner sous phpmyadmin.
+Rentre le ficher gladysdashboard.sql dans la base de donner sous phpmyadmin.
 
 ensuite aller dans le ficher Inc.SSH et modifer par vos information
 
