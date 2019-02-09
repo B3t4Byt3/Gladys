@@ -10,6 +10,8 @@ Rentre la base de donner sous phpmyadmin.
 
 ensuite aller dans le ficher Inc.SSH et modifer par vos information
 
+_Resources/Libs/Inc.SSH.php.
+
     try {
         define('NET_SSH2_LOGGING', NET_SSH2_LOG_COMPLEX);
         //$SSH = new Net_SSH2('IP.ddns.net'); //Pour No-Ip
