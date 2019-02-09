@@ -11,16 +11,16 @@ if (basename(__FILE__) == basename($_SERVER["REQUEST_URI"]))
 /***********************************************************
 *   Check if SSH
 ***********************************************************/
-    try {
-        define('NET_SSH2_LOGGING', NET_SSH2_LOG_COMPLEX);
-        //$SSH = new Net_SSH2('gladysservers.ddns.net');
-        $SSH = new Net_SSH2('192.168.0.7');
-        if (!$SSH->login('pi', 'raspberry')) {
-            // exit('Login Failed');
+        try {
+            define('NET_SSH2_LOGGING', NET_SSH2_LOG_COMPLEX);
+            //$SSH = new Net_SSH2('IP.ddns.net'); //Pour No-Ip
+            $SSH = new Net_SSH2('IP'); // IP en locahost
+            if (!$SSH->login('USERNAME', 'PASSWORD')) { // Username et password du raspberry
+                // exit('Login Failed');
+            }
+        } catch (Exception $Error) {
+            $SSH = new Net_SSH2('IP'); // IP en locahost
+            echo $SSH->getLog();
         }
-    } catch (Exception $Error) {
-        $SSH = new Net_SSH2('192.168.0.1');
-        echo $SSH->getLog();
-    }
 
 ?>
